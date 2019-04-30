@@ -13,4 +13,7 @@ public interface ConfigurationMapper {
 
     //修改配置信息
     List<Configuration> findUpdateCon(Configuration configuration);
+
+    //删除配置信息
+    int findDeleteCon(Integer Id);
 }
