@@ -9,7 +9,7 @@ public interface AdministratorMapper {
     //查询所有管理员信息
     List<Administrator> selectAdmin();
 
-    //添加管理员信息
+    //添加管理员信息。
     int findAddAdmin(@Param("administrator") Administrator administrator);
 
     //修改管理员信息
