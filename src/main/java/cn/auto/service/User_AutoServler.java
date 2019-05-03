@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface User_AutoServler {
     //查询所有汽车
-    List<User_auto> SelectAuto();
+    List<User_auto> selectAuto();
 
     //根据品牌查询所有汽车
-    List<User_auto> SelectAutoByType(Integer TypeId);
+    List<User_auto> selectAutoByType(Integer TypeId);
 
     //根据名称模糊查询汽车
-    List<User_auto> SelectAutoByName(String autoName);
+    List<User_auto> selectAutoByName(String autoName);
 
     //添加汽车
     int findAddAuto(User_auto user_auto);

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Auto_typeMapper {
     //查询所有品牌
-    List<Auto_type> SelectType();
+    List<Auto_type> selectType();
 
     //新增品牌
     int findAddType(Auto_type auto_type);
@@ -18,5 +18,5 @@ public interface Auto_typeMapper {
     List<Auto_type> findUpdateType(Auto_type auto_type);
 
     //判断品牌名称不能重复
-    List<Auto_type> TypeByName(String name);
+    List<Auto_type> typeByName(String name);
 }

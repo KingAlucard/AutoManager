@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface UserServler {
     //查询所有用户
-    List<User> SelectUser();
+    List<User> selectUser();
 
     //使用用户名模糊查询用户
-    List<User> SelectUserByName(String userName);
+    List<User> selectUserByName(String userName);
 
     //判断用户名不能重复
-    List<User> UserNoName(String UserName);
+    List<User> userNoName(String UserName);
 
     //添加用户
     int findAddUser(User user);
