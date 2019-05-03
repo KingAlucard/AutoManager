@@ -4,7 +4,7 @@ import cn.auto.pojo.User_auto;
 
 import java.util.List;
 
-public interface User_AutoMaper {
+public interface User_AutoMapper {
     //查询所有汽车
     List<User_auto> selectAuto();
 
