@@ -21,5 +21,5 @@ public interface User_AutoServler {
     int findDeleteAuto(Integer Id);
 
     //修改汽车
-    List<User_auto> findUpdateAuto();
+    List<User_auto> findUpdateAuto(User_auto user_auto);
 }

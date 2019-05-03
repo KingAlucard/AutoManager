@@ -1,6 +1,7 @@
 package cn.auto.dao.administrator;
 
 import cn.auto.pojo.Administrator;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,11 +10,11 @@ public interface AdministratorMapper {
     List<Administrator> selectAdmin();
 
     //添加管理员信息
-    int findAddAdmin(Administrator administrator);
+    int findAddAdmin(@Param("administrator") Administrator administrator);
 
     //修改管理员信息
-    List<Administrator> findupdateAdmin(Administrator administrator);
+    List<Administrator> findupdateAdmin(@Param("administrator") Administrator administrator);
 
     //删除管理员信息
-    int findDseleteAdmin(Integer Id);
+    int findDseleteAdmin(@Param("Id") Integer Id);
 }
