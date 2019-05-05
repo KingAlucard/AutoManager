@@ -1,13 +1,14 @@
 package cn.auto.dao.configuration;
 
 import cn.auto.pojo.Configuration;
+import cn.auto.pojo.User_auto;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface ConfigurationMapper {
     //根据汽车编号查询汽车配置信息
-    List<Configuration> selectCon(@Param("AutoId") Integer AutoId);
+    List<Configuration> selectCon(@Param("AutoId") User_auto AutoId);
 
     //新增配置信息
     int findAddCon(@Param("configuration") Configuration configuration);
