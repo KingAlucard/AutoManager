@@ -13,10 +13,33 @@
     <context:component-scan base-package="cn.auto.controller"/>
     <mvc:annotation-driven/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
+    <!--配置多视图-->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="suffix" value=".jsp"/>
+                    <property name="prefix" value="/WEB-INF/jsp/"/>
+                </bean>
+            </list>
+        </property>
     </bean>
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="defaultContentType" value="text/html"/>
+        <property name="favorParameter" value="true"/>
+        <property name="mediaTypes">
+            <value>
+                json=application/json
+                xml=application/xml
+                html=text/html
+            </value>
+        </property>
+        <property name="parameterName" value="format"/>
+    </bean>
+
+    <!--<mvc:resources mapping="/statics/**" location="/statics/"/>-->
+    <mvc:default-servlet-handler/>
 
     <mvc:resources mapping="/statics/**" location="/statics/"/>
 
