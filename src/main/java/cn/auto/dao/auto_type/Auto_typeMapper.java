@@ -7,17 +7,17 @@ import java.util.List;
 
 public interface Auto_typeMapper {
     //查询所有品牌
-    List<Auto_type> selectType();
+    List<Auto_type> getType();
 
     //新增品牌
-    int findAddType(@Param("auto_type") Auto_type auto_type);
+    int addType(@Param("auto_type") Auto_type auto_type);
 
     //删除品牌
-    int findDeleteType(@Param("Id") Integer Id);
+    int deleteType(@Param("Id") Integer Id);
 
     //修改品牌
-    List<Auto_type> findUpdateType(@Param("auto_type") Auto_type auto_type);
+    List<Auto_type> updateType(@Param("auto_type") Auto_type auto_type);
 
     //判断品牌名称不能重复
-    List<Auto_type> typeByName(@Param("name") String name);
+    List<Auto_type> gettypeByName(@Param("name") String name);
 }

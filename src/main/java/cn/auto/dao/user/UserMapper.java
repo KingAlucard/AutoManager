@@ -7,21 +7,21 @@ import java.util.List;
 
 public interface UserMapper {
     //查询所有用户
-    List<User> selectUser();
+    List<User> getUser();
 
     //使用用户名模糊查询用户
-    List<User> selectUserByName(@Param("userName") String userName);
+    List<User> userByName(@Param("userName") String userName);
 
     //判断用户名不能重复
-    List<User> userNoName(@Param("UserName") String UserName);
+    List<User> getuserNoName(@Param("UserName") String UserName);
 
     //添加用户
-    int findAddUser(@Param("user") User user);
+    int addUser(@Param("user") User user);
 
     //修改用户信息
-    List<User> findUpdateUser(@Param("user") User user);
+    List<User> updateUser(@Param("user") User user);
 
     //删除用户信息
-    int findDeleteUser(@Param("Id") Integer Id);
+    int deleteUser(@Param("Id") Integer Id);
 
 }

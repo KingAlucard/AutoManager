@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface AdministratorMapper {
     //查询所有管理员信息
-    List<Administrator> selectAdmin();
+    List<Administrator> getAdmin();
 
     //添加管理员信息。
-    int findAddAdmin(@Param("administrator") Administrator administrator);
+    int addAdmin(@Param("administrator") Administrator administrator);
 
     //修改管理员信息
-    List<Administrator> findupdateAdmin(@Param("administrator") Administrator administrator);
+    List<Administrator> updateAdmin(@Param("administrator") Administrator administrator);
 
     //删除管理员信息
-    int findDseleteAdmin(@Param("Id") Integer Id);
+    int deleteAdmin(@Param("Id") Integer Id);
 }

@@ -5,28 +5,36 @@ public class User_auto {
     private Integer Id;         //汽车编号
     private String autoName;    //汽车名称
     private String production;  //汽车出厂日期
-    private Auto_type autoTypeId; //汽车品牌
-    private Configuration autoConfig; //汽车配置
+    private Integer autoTypeId; //汽车品牌
+    private Integer autoConfig; //汽车配置
     private String autoColor;   //汽车颜色
-    private String autoMoney;   //汽车价格
+    private double autoMoney;   //汽车价格
     private String autoImg;     //汽车图片路径
     private Integer adminAuto; //商店所有权
     private Integer userAuto;   //用户所有权
 
-    public Auto_type getAutoTypeId() {
+    public Integer getAutoTypeId() {
         return autoTypeId;
     }
 
-    public void setAutoTypeId(Auto_type autoTypeId) {
+    public void setAutoTypeId(Integer autoTypeId) {
         this.autoTypeId = autoTypeId;
     }
 
-    public Configuration getAutoConfig() {
+    public Integer getAutoConfig() {
         return autoConfig;
     }
 
-    public void setAutoConfig(Configuration autoConfig) {
+    public void setAutoConfig(Integer autoConfig) {
         this.autoConfig = autoConfig;
+    }
+
+    public double getAutoMoney() {
+        return autoMoney;
+    }
+
+    public void setAutoMoney(double autoMoney) {
+        this.autoMoney = autoMoney;
     }
 
     public Integer getAdminAuto() {
@@ -78,13 +86,6 @@ public class User_auto {
         this.autoColor = autoColor;
     }
 
-    public String getAutoMoney() {
-        return autoMoney;
-    }
-
-    public void setAutoMoney(String autoMoney) {
-        this.autoMoney = autoMoney;
-    }
 
     public String getAutoImg() {
         return autoImg;

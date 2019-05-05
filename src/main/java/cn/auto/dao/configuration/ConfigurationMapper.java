@@ -8,14 +8,14 @@ import java.util.List;
 
 public interface ConfigurationMapper {
     //根据汽车编号查询汽车配置信息
-    List<Configuration> selectCon(@Param("AutoId") User_auto AutoId);
+    List<Configuration> getCon(@Param("AutoId") User_auto AutoId);
 
     //新增配置信息
-    int findAddCon(@Param("configuration") Configuration configuration);
+    int addCon(@Param("configuration") Configuration configuration);
 
     //修改配置信息
-    List<Configuration> findUpdateCon(@Param("configuration") Configuration configuration);
+    List<Configuration> updateCon(@Param("configuration") Configuration configuration);
 
     //删除配置信息
-    int findDeleteCon(@Param("Id") Integer Id);
+    int deleteCon(@Param("Id") Integer Id);
 }

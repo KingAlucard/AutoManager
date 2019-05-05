@@ -4,7 +4,7 @@ public class Administrator {
     private Integer Id;  //编号
     private String userName;  //管理员账户
     private String passWord;    //管理员密码
-    private String money;   //管理员金额
+    private double money;   //管理员金额
 
     public Integer getId() {
         return Id;
@@ -30,11 +30,11 @@ public class Administrator {
         this.passWord = passWord;
     }
 
-    public String getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 }

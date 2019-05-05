@@ -8,20 +8,20 @@ import java.util.List;
 
 public interface User_AutoMapper {
     //查询所有汽车
-    List<User_auto> selectAuto();
+    List<User_auto> getAuto();
 
     //根据品牌查询所有汽车
-    List<User_auto> selectAutoByType(@Param("TypeId") Auto_type TypeId);
+    List<User_auto> getAutoByType(@Param("TypeId") Auto_type TypeId);
 
     //根据名称模糊查询汽车
-    List<User_auto> selectAutoByName(@Param("autoName") String autoName);
+    List<User_auto> getAutoByName(@Param("autoName") String autoName);
 
     //添加汽车
-    int findAddAuto(@Param("user_auto") User_auto user_auto);
+    int addAuto(@Param("user_auto") User_auto user_auto);
 
     //删除汽车
-    int findDeleteAuto(@Param("Id") Integer Id);
+    int deleteAuto(@Param("Id") Integer Id);
 
     //修改汽车
-    List<User_auto> findUpdateAuto(@Param("user_auto") User_auto user_auto);
+    List<User_auto> updateAuto(@Param("user_auto") User_auto user_auto);
 }
