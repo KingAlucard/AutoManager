@@ -4,7 +4,7 @@ import cn.auto.pojo.Administrator;
 
 import java.util.List;
 
-public interface AdministratorServler {
+public interface AdministratorService {
     //查询所有管理员信息
     List<Administrator> selectAdmin();
 

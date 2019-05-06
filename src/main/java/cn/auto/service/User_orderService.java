@@ -4,7 +4,7 @@ import cn.auto.pojo.User_order;
 
 import java.util.List;
 
-public interface User_orderServler {
+public interface User_orderService {
     //查询所有订单
     List<User_order> selectOrder();
 

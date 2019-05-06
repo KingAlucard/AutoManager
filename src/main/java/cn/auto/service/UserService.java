@@ -4,7 +4,7 @@ import cn.auto.pojo.User;
 
 import java.util.List;
 
-public interface UserServler {
+public interface UserService {
     //查询所有用户
     List<User> selectUser();
 

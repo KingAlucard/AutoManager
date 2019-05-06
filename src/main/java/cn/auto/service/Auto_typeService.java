@@ -4,7 +4,7 @@ import cn.auto.pojo.Auto_type;
 
 import java.util.List;
 
-public interface Auto_typeServler {
+public interface Auto_typeService {
     //查询所有品牌
     List<Auto_type> selectType();
 

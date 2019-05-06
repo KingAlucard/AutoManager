@@ -5,7 +5,7 @@ import cn.auto.pojo.User_auto;
 
 import java.util.List;
 
-public interface ConfigurationServler {
+public interface ConfigurationService {
     //根据汽车编号查询汽车配置信息
     List<Configuration> selectCon(User_auto AutoId);
 

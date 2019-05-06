@@ -5,7 +5,7 @@ import cn.auto.pojo.User_auto;
 
 import java.util.List;
 
-public interface User_AutoServler {
+public interface User_AutoService {
     //查询所有汽车
     List<User_auto> selectAuto();
 
