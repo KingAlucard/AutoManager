@@ -24,4 +24,7 @@ public interface User_AutoMapper {
 
     //修改汽车
     List<User_auto> updateAuto(@Param("user_auto") User_auto user_auto);
+
+    //修改汽车所有权
+    List<User_auto> updateAutoByAuto(@Param("user_auto") User_auto user_auto);
 }

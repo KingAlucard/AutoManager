@@ -3,12 +3,37 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.auto.dao.user_auto.User_AutoMapper">
-    <update id="findUpdateAuto">
-        UPDATE auto SET autoName=?,production=?,autoTypeId,autoMoney=?,autoImg=?,adminAuto=?,userAuto=?,autoConfig=? WHERE Id=?
+    <update id="updateAuto">
+        UPDATE auto
         <trim prefix="set" suffix="," suffixOverrides="where">
             <if test="autoName != null and autoName != ''">
                 autoName = #{autoName}
             </if>
+            <if test="production != null and production != ''">
+                production = #{production}
+            </if>
+            <if test="autoTypeId != null and autoTypeId != ''">
+                autoTypeId = #{autoTypeId}
+            </if>
+            <if test="autoMoney != null and autoMoney != ''">
+                autoMoney = #{autoMoney}
+            </if>
+            <if test="autoImg != null and autoImg != ''">
+                autoImg = #{autoImg}
+            </if>
+            <if test="adminAuto != null and adminAuto != ''">
+                adminAuto = #{adminAuto}
+            </if>
+            <if test="userAuto != null and userAuto != ''">
+                userAuto = #{userAuto}
+            </if>
+            <if test="autoConfig != null and autoConfig != ''">
+                autoConfig = #{autoConfig}
+            </if>
+            where Id = #{Id}
         </trim>
     </update>
+
+
+
 </mapper>
