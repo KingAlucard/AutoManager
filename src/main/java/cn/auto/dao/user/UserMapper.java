@@ -8,7 +8,8 @@ import java.util.List;
 public interface UserMapper {
     //查询所有用户
     List<User> getUser();
-
+    //根据Id查询用户信息
+    List<User> getUserById(@Param("Id") Integer Id);
     //使用用户名模糊查询用户
     List<User> userByName(@Param("userName") String userName);
 
