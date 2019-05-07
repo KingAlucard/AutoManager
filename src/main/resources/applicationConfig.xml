@@ -25,15 +25,23 @@
     </bean>
 
     <!--配置sqlSessionFactor工厂类-->
-    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="cn.spring.pojo"/>
     </bean>
 
+
+    <!--扫描单个Mapper-->
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+         <property name="mapperInterface" value="cn.auto.dao.configuration.ConfigurationMapper"/>
+         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+     </bean>
+
     <!--使用mapper扫描包-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.auto.dao"/>
-    </bean>
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value="cn.auto.dao.configuration"/>-->
+    <!--</bean>-->
+
 
     <!--配置声明式的事务-->
     <!--第一步配置事务管理类（增强类）-->

@@ -13,7 +13,7 @@ public interface User_AutoMapper {
     //根据品牌查询所有汽车
     List<User_auto> getAutoByType(@Param("TypeId") Auto_type TypeId);
 
-    //根据名称模糊查询汽车
+    //根据名称模糊查询汽车////////
     List<User_auto> getAutoByName(@Param("autoName") String autoName);
 
     //添加汽车

@@ -8,130 +8,86 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>车辆修改</title>
+		<link rel="stylesheet" type="text/css" href="../statics/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../statics/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="../statics/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../statics/css/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="../statics/css/style.css" />
+
+		<!--/meta 作为公共模版分离出去-->
 	</head>
 
-	<script src="../static/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#myform").submit(function(){
-				var Id = $("input[name='Id']").val();
-				var autoName = $("input[name='autoName']").val();
-				var production = $("input[name='production']").val();
-				var autoTypeId = $("select[name='autoTypeId']").val();
-				var autoColor = $("input[name='autoColor']").val();
-				var autoMoney = $("input[name='autoMoney']").val();
-
-				if(Id == "" || Id == null){
-					alert("车辆编号不能为空");
-					return false;
-				}else if(autoName == "" || autoName == null){
-					alert("车辆名称不能为空");
-					return false;
-				}else if(production == "" || production == null){
-					alert("出厂日期不能为空");
-					return false;
-				}else if(autoTypeId == 0){
-					alert("车辆品牌不能为空");
-					return false;
-				}else if(autoColor == "" || autoColor == null){
-					alert("车辆颜色不能为空");
-					return false;
-				}else if(autoMoney == "" || autoMoney == null){
-					alert("车辆价格不能为空");
-					return false;
-				}
-			})
-
-		})
-	</script>
-	<style type="text/css">
-		#mydiv{
-			width: 500px;
-			height: 500px;
-			background-color: #C2C2C2;
-			border-radius: 40px;
-			position: absolute;
-			top: 50px;
-			left: 400px;
-			border: 1px solid;
-			opacity:0.8;
-		}
-		input{
-			width: 200px;
-			height: 22px;
-			font-family: "楷体";
-		}
-		tr{
-			font-family: "楷体";
-			font-weight: bold;
-			display:block; /*将tr设置为块体元素*/
-			margin:10px ;  /*设置tr间距为2px*/
-
-		}
-		select{
-			font-family: "楷体";
-			/*background: transparent;*/
-			width: 205px;
-			padding: 5px;
-			/*font-size: 16px;*/
-			border: 1px solid #ccc;
-			height: 30px;
-			-webkit-appearance: none; /*for chrome*/
-		}
-	</style>
 	<body>
+	<article class="page-container">
+		<form action="#" method="post" class="form form-horizontal" id="form-member-add">
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>汽车名称：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" placeholder="汽车名称">
+				</div>
+			</div>
 
-	<img src="../static/images/timg.jpg" height="650px" width="100%" />
-	<div id="mydiv">
-		<form action="" method="post" id="myform">
-			<table align="center">
-				<tr>
-					<th><h1>车辆修改(根据编号修改信息)</h1></th>
-				</tr>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>汽车出厂日期：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" placeholder="汽车出厂日期">
+				</div>
+			</div>
 
-				<tr>
-					<td>车辆编号:</td>
-					<td><input type="text" name="Id"></td>
-				</tr>
-				<tr>
-					<td>车辆名称:</td>
-					<td><input type="text" name="autoName"></td>
-				</tr>
-				<tr>
-					<td>出厂时间:</td>
-					<td><input type="text" name="production"></td>
-				</tr>
-				<tr>
-					<td>车辆品牌:</td>
-					<td>
-						<select name="autoTypeId">
-							<option value="0">--请选择品牌--</option>
-							<option value="1">兰博基尼</option>
-							<option value="2">法拉利</option>
-							<option value="3">保时捷</option>
-							<option value="4">奔驰</option>
-						</select></td>
-				</tr>
-				<tr>
-					<td>车辆颜色:</td>
-					<td><input type="text" name="autoColor"></td>
-				</tr>
-				<tr>
-					<td>车辆价格:</td>
-					<td><input type="text" name="autoMoney">（元）</td>
-				</tr>
-				<tr>
-					<td>车辆图片:</td>
-					<td><input type="file" name="autoImg"></td>
-				</tr>
-				<tr>
-					<td align="center">
-						<input type="submit" value="提交">
-						<input type="button" value="重置">
-					</td>
-				</tr>
-			</table>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>汽车品牌：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+						<span class="select-box">
+							<select class="select" size="1" name="city">
+								<option value="0" selected>--请选择汽车品牌--</option>
+								<option value="1">兰博基尼</option>
+								<option value="2">法拉利</option>
+								<option value="3">保时捷</option>
+							</select>
+						</span>
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>汽车价格：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" placeholder="汽车价格">
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">汽车图片：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+						<span class="btn-upload form-group">
+							<input class="input-text upload-url" type="text" name="uploadfile" id="uploadfile" readonly nullmsg="请添加附件！" style="width:200px">
+							<a href="javascript:;" class="btn btn-primary radius upload-btn">浏览文件</a>
+							<input type="file" multiple name="file-2" class="input-file">
+						</span>
+				</div>
+			</div>
+
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;修改&nbsp;&nbsp;">
+				</div>
+			</div>
 		</form>
-	</div>
+	</article>
+
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../statics/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../statics/js/layer.js"></script>
+	<script type="text/javascript" src="../statics/js/H-ui.min.js"></script>
+	<script type="text/javascript" src="../statics/js/H-ui.admin.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="../statics/js/WdatePicker.js"></script>
+	<script type="text/javascript" src="../statics/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="../statics/js/validate-methods.js"></script>
+	<script type="text/javascript" src="../statics/js/messages_zh.js"></script>
+
+	<!--/请在上方写此页面业务相关的脚本-->
 	</body>
+
 </html>
