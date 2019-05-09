@@ -3,5 +3,25 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.auto.dao.user_order.User_orderMapper">
+<<<<<<< HEAD
+    <select id="getOrder" resultType="User_order">
+        select * from user_Order
+    </select>
+    <select id="getOrderById" resultType="User_order">
+        select * from user_Order where  userId=#{userId}
+    </select>
+    <insert id="addOrder">
+        insert  into user_Order values (null,#{user_order.userId},#{user_order.autoId},now(),#{user_order.money})
+    </insert>
+    <delete id="deleteOrder" >
+        delete from user_Order
+        <where>
+            <if test="Id!=null and Id!=''">
+                Id=#{Id}
+            </if>
+        </where>
+    </delete>
+=======
 
+>>>>>>> origin/master
 </mapper>

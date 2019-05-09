@@ -1,7 +1,11 @@
 package cn.auto.pojo;
 
 public class User_order {
+<<<<<<< HEAD
+    private Integer Id;         //订单编号
+=======
     private Integer id;         //订单编号
+>>>>>>> origin/master
     private Integer userId;        //用户编号
     private Integer autoId;   //汽车编号
     private String orderTime;   //订单时间
@@ -45,5 +49,16 @@ public class User_order {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    @Override
+    public String toString() {
+        return "User_order{" +
+                "Id=" + Id +
+                ", userId=" + userId +
+                ", autoId=" + autoId +
+                ", orderTime='" + orderTime + '\'' +
+                ", money='" + money + '\'' +
+                '}';
     }
 }

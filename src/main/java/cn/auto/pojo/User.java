@@ -91,4 +91,20 @@ public class User {
     public void setBankPwd(String bankPwd) {
         this.bankPwd = bankPwd;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "Id=" + Id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", phone='" + phone + '\'' +
+                ", money='" + money + '\'' +
+                ", address='" + address + '\'' +
+                ", dateTime='" + dateTime + '\'' +
+                ", cardId='" + cardId + '\'' +
+                ", bank='" + bank + '\'' +
+                ", bankPwd='" + bankPwd + '\'' +
+                '}';
+    }
 }

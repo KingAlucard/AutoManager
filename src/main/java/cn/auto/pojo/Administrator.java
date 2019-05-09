@@ -5,6 +5,15 @@ public class Administrator {
     private String userName;  //管理员账户
     private String passWord;    //管理员密码
     private double money;   //管理员金额
+    private double autoMoney;   //汽车价格
+
+    public double getAutoMoney() {
+        return autoMoney;
+    }
+
+    public void setAutoMoney(double autoMoney) {
+        this.autoMoney = autoMoney;
+    }
 
     public Integer getId() {
         return id;
