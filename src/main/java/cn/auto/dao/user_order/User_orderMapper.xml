@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.auto.dao.user_order.User_orderMapper">
-<<<<<<< HEAD
     <select id="getOrder" resultType="User_order">
         select * from user_Order
     </select>
@@ -21,7 +20,5 @@
             </if>
         </where>
     </delete>
-=======
 
->>>>>>> origin/master
 </mapper>

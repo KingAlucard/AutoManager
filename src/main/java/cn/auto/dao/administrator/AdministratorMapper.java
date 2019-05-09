@@ -13,11 +13,9 @@ public interface AdministratorMapper {
     int addAdmin(@Param("administrator") Administrator administrator);
 
     //修改管理员信息
-<<<<<<< HEAD
-    int updateAdmin(@Param("Id") Integer Id,@Param("autoMoney") double autoMoney);
-=======
+    int updateAdminByMoney(@Param("Id") Integer Id,@Param("autoMoney") double autoMoney);
+    //修改管理员金额
     int updateAdmin(@Param("administrator") Administrator administrator);
->>>>>>> origin/master
 
     //删除管理员信息
     int deleteAdmin(@Param("Id") Integer Id);
