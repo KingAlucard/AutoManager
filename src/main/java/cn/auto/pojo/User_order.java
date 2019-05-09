@@ -2,7 +2,7 @@ package cn.auto.pojo;
 
 public class User_order {
     private Integer Id;         //订单编号
-    private User userId;        //用户编号
+    private Integer userId;        //用户编号
     private Integer autoId;   //汽车编号
     private String orderTime;   //订单时间
     private String money;       //订单价格
@@ -15,11 +15,11 @@ public class User_order {
         Id = id;
     }
 
-    public User getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(User userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
