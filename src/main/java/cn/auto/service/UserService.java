@@ -13,21 +13,15 @@ public interface UserService {
     List<User> userByName(String userName);
 
     //判断用户名不能重复
-<<<<<<< HEAD
     boolean userNoName(String UserName);
-=======
+
     int getuserNoName(String UserName);
->>>>>>> origin/master
 
     //添加用户
     int addUser(User user);
 
     //修改用户信息
-<<<<<<< HEAD
-    int findUpdateUser(@Param("user") User user);
-=======
-    List<User> updateUser(User user);
->>>>>>> origin/master
+    int updateUser(User user);
 
     //删除用户信息
     int deleteUser(Integer Id);

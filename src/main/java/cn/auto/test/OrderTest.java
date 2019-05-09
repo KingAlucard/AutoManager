@@ -15,7 +15,7 @@ public class OrderTest {
     public  void test(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         User_orderService orderService =(User_orderService) context.getBean("user_orderService");
-        List<User_order> user_orders = orderService.selectOrder();
+        List<User_order> user_orders = orderService.getOrder();
         logger.info("===================>"+user_orders.size());
         for (User_order user: user_orders) {
             logger.info(user.toString());
@@ -25,7 +25,7 @@ public class OrderTest {
     public  void test1(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         User_orderService orderService =(User_orderService) context.getBean("user_orderService");
-        List<User_order> user_orders = orderService.selectOrderById(1);
+        List<User_order> user_orders = orderService.getOrderById(1);
         logger.info("===================>"+user_orders.size());
         for (User_order user: user_orders) {
             logger.info(user.toString());
@@ -39,7 +39,7 @@ public class OrderTest {
         user_order.setMoney(1000000);
         user_order.setAutoId(2);
         user_order.setUserId(1);
-      int  user_orders = orderService.findAddOrder(user_order);
+      int  user_orders = orderService.addOrder(user_order);
         if(user_orders>0){
             logger.info("新增成功");
         }
@@ -48,7 +48,7 @@ public class OrderTest {
     public  void test3(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         User_orderService orderService =(User_orderService) context.getBean("user_orderService");
-        int deleteOrder = orderService.findDeleteOrder(2);
+        int deleteOrder = orderService.deleteOrder(2);
         if(deleteOrder>0){
             logger.info("删除成功");
         }

@@ -12,10 +12,6 @@ public class User_auto {
     private String autoImg;     //汽车图片路径
     private Integer adminAuto; //商店所有权
     private Integer userAuto;   //用户所有权
-<<<<<<< HEAD
-
-
-=======
     private Administrator adminId;   //g管理员的Id
 
     public Administrator getAdminId() {
@@ -25,7 +21,6 @@ public class User_auto {
     public void setAdminId(Administrator adminId) {
         this.adminId = adminId;
     }
->>>>>>> origin/master
 
     public Integer getAutoTypeId() {
         return autoTypeId;

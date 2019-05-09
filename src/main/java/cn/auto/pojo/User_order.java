@@ -1,11 +1,8 @@
 package cn.auto.pojo;
 
 public class User_order {
-<<<<<<< HEAD
     private Integer Id;         //订单编号
-=======
     private Integer id;         //订单编号
->>>>>>> origin/master
     private Integer userId;        //用户编号
     private Integer autoId;   //汽车编号
     private String orderTime;   //订单时间

@@ -16,6 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class ConfigController {
+
     @Resource
     private ConfigurationService configurationService;
 
@@ -31,6 +32,13 @@ public class ConfigController {
     @RequestMapping("/configurationAdd.html")
     public String configurationAdd() {
         return "configurationAdd";
+    }
+
+    //车辆配置删除
+    @RequestMapping("/configurationDel.html")
+    public String configurationDel(@RequestParam(value = "Id") Integer Id){
+        int colse = configurationService.deleteCon(Id);
+        return "configurationSelete";
     }
 
 }

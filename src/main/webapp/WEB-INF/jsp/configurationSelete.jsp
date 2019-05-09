@@ -41,7 +41,7 @@
 				<tbody>
 				<c:forEach items="${list}" var="li">
 					<tr class="text-c" id="selectRow">
-					<td>${li.id}</td>
+					<td id="id">${li.id}</td>
 					<td>${li.autoId}</td>
 					<td>${li.engine}</td>
 					<td>${li.gearbox}</td>
@@ -69,7 +69,9 @@
 	<!--请在下方写此页面业务相关的脚本-->
 	<script type="text/javascript" src="../statics/js/WdatePicker.js"></script>
 	<script type="text/javascript" src="../statics/js/laypage.js"></script>
+	<script src = "../../statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
+
 
 		/*用户-添加*/
 		function member_add(title, url, w, h) {
@@ -81,7 +83,13 @@
 		}
 		/*用户-删除*/
 		function member_del(obj, id) {
-			confirm("确定删除嘛？");
+			var is = confirm("确定删除嘛？")
+			if(is){
+				var Id = $(".id").val();
+				alert(Id)
+				location.href="/user/configurationDel.html?Id="+Id;
+			}
+
 		}
 		//chak
 		function member_show(title,url,id,w,h){
