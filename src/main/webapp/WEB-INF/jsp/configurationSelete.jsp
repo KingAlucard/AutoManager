@@ -14,13 +14,14 @@
 		<link rel="stylesheet" type="text/css" href="../statics/css/skin.css" id="skin" />
 		<link rel="stylesheet" type="text/css" href="../statics/css/style.css" />
 
+
 	</head>
 
 	<body>
 	<div class="page-container">
 		<div class="text-c">
-			汽车编号：<input style="width: 200px;" class="input-text" type="text" name="" placeholder="请输入汽车编号"/>
-			<button type="submit" class="btn btn-success radius" id="" name="">查询</button>
+			汽车编号：<input style="width: 200px;" class="input-text" type="text" name="autoId" placeholder="请输入汽车编号"/>
+			<button type="submit" class="btn btn-success radius" id="" name="" onclick="getCon()">查询</button>
 		</div>
 		<div class="cl pd-5 bg-1 bk-gray mt-20"><a href="javascript:;" onclick="member_add('添加汽车配置','/user/configurationAdd.html','','510')" class="btn btn-primary radius">添加汽车配置</a></div>
 		<div class="mt-20">
@@ -39,19 +40,19 @@
 				</thead>
 				<tbody>
 				<c:forEach items="${list}" var="li">
-					<tr class="text-c">
-						<td>${li.id}</td>
-						<td>${li.autoId}</td>
-						<td>${li.engine}</td>
-						<td>${li.gearbox}</td>
-						<td>${li.speed}</td>
-						<td class="text-l">${li.displacement}</td>
-						<td>${li.drive}</td>
-						<td class="td-manage">
-							<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/configurationUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
-							<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
-						</td>
-					</tr>
+					<tr class="text-c" id="selectRow">
+					<td>${li.id}</td>
+					<td>${li.autoId}</td>
+					<td>${li.engine}</td>
+					<td>${li.gearbox}</td>
+					<td>${li.speed}</td>
+					<td class="text-l">${li.displacement}</td>
+					<td>${li.drive}</td>
+					<td class="td-manage">
+						<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/configurationUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
+						<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
+					</td>
+				</tr>
 				</c:forEach>
 
 				</tbody>
@@ -81,6 +82,15 @@
 		/*用户-删除*/
 		function member_del(obj, id) {
 			confirm("确定删除嘛？");
+		}
+		//chak
+		function member_show(title,url,id,w,h){
+			layer_show(title,url,w,h);
+		}
+		//查询所有配置
+		function getCon() {
+			var autoId = $(".input-text").val();
+            location.href="/user/configurationSelete.html?autoId="+autoId;
 		}
 	</script>
 	</body>
