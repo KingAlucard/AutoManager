@@ -15,7 +15,7 @@ public class UserTest {
     public  void test(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         UserService userService =(UserService) context.getBean("userService");
-        List<User> users = userService.selectUser();
+        List<User> users = userService.getUser();
         for (User user: users) {
             logger.info(user.toString());
         }
@@ -24,7 +24,7 @@ public class UserTest {
     public  void test1(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         UserService userService =(UserService) context.getBean("userService");
-        List<User> users = userService.selectUserByName("三");
+        List<User> users = userService.userByName("三");
         for (User user: users) {
             logger.info(user.toString());
         }
@@ -33,7 +33,7 @@ public class UserTest {
     public  void test2(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         UserService userService = (UserService) context.getBean("userService");
-        boolean userNoName = userService.userNoName("张三1");
+        boolean userNoName = userService.getuserNoName("张三1");
         logger.info(userNoName);
     }
     @Test
@@ -50,7 +50,7 @@ public class UserTest {
         user.setPhone("13645678945");
         user.setUserName("小栾");
 
-        int addUser = userService.findAddUser(user);
+        int addUser = userService.addUser(user);
         if(addUser>0){
             logger.info("新增成功");
         }
@@ -70,7 +70,7 @@ public class UserTest {
         user.setPhone("13645678945");
         user.setUserName("小q");
         user.setId(2);
-        int updateUser = userService.findUpdateUser(user);
+        int updateUser = userService.updateUser(user);
         if(updateUser>0){
             logger.info("修改成功");
         }
@@ -79,7 +79,7 @@ public class UserTest {
     public  void test5(){
         ApplicationContext context =new ClassPathXmlApplicationContext("applicationConfig.xml");
         UserService userService = (UserService) context.getBean("userService");
-        int delete = userService.findDeleteUser(2);
+        int delete = userService.deleteUser(2);
         if(delete>0){
             logger.info("删除成功");
         }

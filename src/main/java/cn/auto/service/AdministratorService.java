@@ -11,6 +11,9 @@ public interface AdministratorService {
     //添加管理员信息。
     int addAdmin(Administrator administrator);
 
+    //修改管理员金额
+    int updateAdminByMoney(Integer Id,double autoMoney);
+
     //修改管理员信息
     int updateAdmin(Administrator administrator);
 

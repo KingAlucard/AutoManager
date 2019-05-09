@@ -12,11 +12,11 @@ public interface ConfigurationMapper {
     List<Configuration> getCon(@Param("autoId") Integer autoId);
 
     //新增配置信息
-    int addCon(@Param("configuration") Configuration configuration);
+    int addCon(Configuration configuration);
 
     //修改配置信息
-    int updateCon(@Param("configuration") Configuration configuration);
+    int updateCon(Configuration configuration);
 
     //删除配置信息
-    int deleteCon(@Param("Id") Integer Id);
+    int deleteCon(@Param("id") Integer id);
 }

@@ -18,14 +18,16 @@
             </if>
         </trim>
     </select>
-    <select id="getuserNoName" resultType="user">
-         select * from `user`where userName =#{UserName}
+
+    <select id="getuserNoName" resultType="User">
+         select * from `user`where userName =#{userName}
      </select>
+
     <insert id="addUser">
      INSERT INTO `user` VALUES(null,#{user.userName},#{user.passWord},#{user.phone},0,#{user.address},#{user.dateTime},#{user.cardId},#{user.bank},#{user.bankPwd}) ;
     </insert>
-    <update id="updateUser">
-       UPDATE `auto`.`user`
+    <update id="updateUser" parameterType="User">
+       UPDATE `user`
         <trim prefix="set" suffixOverrides=",">
             <if test="userName!=null and userName!=''">
                 `userName` = #{userName},
@@ -56,7 +58,7 @@
             </if>
         </trim>
 
-       WHERE `Id` = #{Id}
+       WHERE `Id` = #{id}
     </update>
     <delete id="deleteUser">
         delete from `user`

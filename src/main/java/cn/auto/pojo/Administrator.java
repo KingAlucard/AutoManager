@@ -20,7 +20,7 @@ public class Administrator {
     }
 
     public void setId(Integer id) {
-        id = id;
+        this.id = id;
     }
 
     public String getUserName() {

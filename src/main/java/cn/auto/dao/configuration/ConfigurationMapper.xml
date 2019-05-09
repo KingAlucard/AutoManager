@@ -13,11 +13,11 @@
         </trim>
     </select>
     <!--添加配置-->
-    <insert id="addCon">
+    <insert id="addCon" parameterType="Configuration">
         insert into configuration values(null,#{autoId},#{engine},#{gearbox},#{speed},#{displacement},#{drive})
     </insert>
     <!--修改配置-->
-    <update id="updateCon">
+    <update id="updateCon" parameterType="Configuration">
         UPDATE configuration
         <trim prefix="set" suffix="," suffixOverrides="where">
             <if test="autoId != null and autoId != ''">
@@ -38,12 +38,12 @@
             <if test="drive != null and drive != ''">
                 drive = #{drive}
             </if>
-            where Id = #{Id}
+            where Id = #{id}
         </trim>
     </update>
 
     <!--删除配置-->
     <delete id="deleteCon">
-        delete from configuration where Id = #{Id}
+        delete from configuration where Id = #{id}
     </delete>
 </mapper>

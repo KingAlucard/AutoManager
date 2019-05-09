@@ -14,22 +14,22 @@ public class User_orderServiceImpl implements User_orderService{
     public User_orderMapper user_orderMapper;
 
     @Override
-    public List<User_order> selectOrder() {
+    public List<User_order> getOrder() {
         return user_orderMapper.getOrder();
     }
 
     @Override
-    public List<User_order> selectOrderById(Integer userId) {
+    public List<User_order> getOrderById(Integer userId) {
         return user_orderMapper.getOrderById(userId);
     }
 
     @Override
-    public int findAddOrder(User_order user_order) {
+    public int addOrder(User_order user_order) {
         return user_orderMapper.addOrder(user_order);
     }
 
     @Override
-    public int findDeleteOrder(Integer Id) {
+    public int deleteOrder(Integer Id) {
         return user_orderMapper.deleteOrder(Id);
     }
 }

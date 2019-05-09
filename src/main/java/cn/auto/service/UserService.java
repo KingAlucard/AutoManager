@@ -7,15 +7,15 @@ import java.util.List;
 public interface UserService {
     //查询所有用户
     List<User> getUser();
+    
     //根据Id查询用户信息
     List<User> getUserById(Integer Id);
+
     //使用用户名模糊查询用户
     List<User> userByName(String userName);
 
     //判断用户名不能重复
-    boolean userNoName(String UserName);
-
-    int getuserNoName(String UserName);
+    boolean getuserNoName(String UserName);
 
     //添加用户
     int addUser(User user);

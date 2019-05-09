@@ -34,7 +34,7 @@ public class TranUserServiceImpl implements TranUserService {
             if (result > 0) {
                 // 管理员的金额+汽车金额
                 administrator.setMoney(administrator.getMoney() + user_auto.getAutoMoney());
-                int administrators = administratorMapper.updateAdmin(administrator.getId(),user_auto.getAutoMoney());
+                int administrators = administratorMapper.updateAdminByMoney(administrator.getId(),user_auto.getAutoMoney());
                 if (administrators>0) {
 
                     //用户金额成功修改后就新增一条订单信息
@@ -43,6 +43,7 @@ public class TranUserServiceImpl implements TranUserService {
                     user_order.setAutoId(user_auto.getId());
                     user_order.setMoney(user_auto.getAutoMoney());
                     int addOrder = user_orderMapper.addOrder(user_order);
+                    System.out.println("==================>"+user_order.getAutoId());
                     if (addOrder>0){
                         return  true;
                     }

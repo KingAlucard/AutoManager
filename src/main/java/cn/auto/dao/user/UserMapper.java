@@ -14,14 +14,14 @@ public interface UserMapper {
     List<User> userByName(@Param("userName") String userName);
 
     //判断用户名不能重复
-    List<User> getuserNoName(@Param("UserName") String UserName);
+    List<User> getuserNoName(@Param("userName") String UserName);
 
     //添加用户
     int addUser(@Param("user") User user);
 
     //修改用户信息
 
-    int updateUser(@Param("user") User user);
+    int updateUser( User user);
 
     //删除用户信息
     int deleteUser(@Param("Id") Integer Id);

@@ -11,8 +11,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Resource
     public UserMapper userMapper;
+
     @Override
-    public List<User> selectUser() {
+    public List<User> getUser() {
         return userMapper.getUser();
     }
 
@@ -22,31 +23,34 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> selectUserByName(String userName) {
+    public List<User> userByName(String userName) {
         return userMapper.userByName(userName);
     }
 
-    @Override
-    public boolean userNoName(String UserName) {
-        List<User> list = userMapper.getuserNoName(UserName);
-        if(list.size()==0){
-            return true;
-        }
-        return  false;
-    }
 
     @Override
-    public int findAddUser(User user) {
+    public boolean getuserNoName(String UserName) {
+        List<User> list = userMapper.getuserNoName(UserName);
+        if(list.size() == 0 ){
+            return false;
+        }
+        return  true;
+    }
+
+
+    @Override
+    public int addUser(User user) {
         return userMapper.addUser(user);
     }
 
     @Override
-    public int findUpdateUser(User user) {
+    public int updateUser(User user) {
         return userMapper.updateUser(user);
     }
 
     @Override
-    public int findDeleteUser(Integer Id) {
+    public int deleteUser(Integer Id) {
         return userMapper.deleteUser(Id);
     }
+
 }

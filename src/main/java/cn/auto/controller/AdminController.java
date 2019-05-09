@@ -47,11 +47,7 @@ public class AdminController {
     public String autoUpdate() {
         return "autoUpdate";
     }
-    //车辆配置新增
-    @RequestMapping("/configurationAdd.html")
-    public String configurationAdd() {
-        return "configurationAdd";
-    }
+
     //车辆配置修改
     @RequestMapping("/configurationUpdate.html")
     public String configurationUpdate() {

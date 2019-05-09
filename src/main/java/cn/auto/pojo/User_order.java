@@ -1,20 +1,11 @@
 package cn.auto.pojo;
 
 public class User_order {
-    private Integer Id;         //订单编号
     private Integer id;         //订单编号
     private Integer userId;        //用户编号
     private Integer autoId;   //汽车编号
     private String orderTime;   //订单时间
     private double money;       //订单价格
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        id = id;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -48,14 +39,22 @@ public class User_order {
         this.money = money;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "User_order{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", userId=" + userId +
                 ", autoId=" + autoId +
                 ", orderTime='" + orderTime + '\'' +
-                ", money='" + money + '\'' +
+                ", money=" + money +
                 '}';
     }
 }

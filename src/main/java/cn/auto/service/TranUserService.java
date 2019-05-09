@@ -7,5 +7,5 @@ import org.apache.ibatis.annotations.Param;
 
 
 public interface TranUserService {
-    boolean jiaoYi(@Param("user") User user, @Param("user_auto") User_auto user_auto, @Param("administrator") Administrator administrator);
+    boolean jiaoYi(@Param("user") User user, @Param("user_auto")User_auto user_auto, @Param("administrator") Administrator administrator);
 }

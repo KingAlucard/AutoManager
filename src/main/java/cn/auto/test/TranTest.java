@@ -22,9 +22,10 @@ public class TranTest {
         user.setId(1);
         User_auto user_auto = new User_auto();
         user_auto.setId(1);
-        Administrator administrator=new Administrator();
         user_auto.setAutoMoney(7200000);
+        Administrator administrator=new Administrator();
         administrator.setId(1);
+        System.out.println(user_auto.getId());
         if(userService.jiaoYi(user, user_auto,administrator)){
               logger.info("成功");
         }
