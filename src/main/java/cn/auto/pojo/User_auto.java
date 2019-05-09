@@ -12,13 +12,13 @@ public class User_auto {
     private String autoImg;     //汽车图片路径
     private Integer adminAuto; //商店所有权
     private Integer userAuto;   //用户所有权
-    private Integer adminId;   //g管理员的Id
+    private Administrator adminId;   //g管理员的Id
 
-    public Integer getAdminId() {
+    public Administrator getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(Integer adminId) {
+    public void setAdminId(Administrator adminId) {
         this.adminId = adminId;
     }
 

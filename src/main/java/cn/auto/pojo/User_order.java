@@ -5,7 +5,7 @@ public class User_order {
     private Integer userId;        //用户编号
     private Integer autoId;   //汽车编号
     private String orderTime;   //订单时间
-    private String money;       //订单价格
+    private double money;       //订单价格
 
     public Integer getId() {
         return Id;
@@ -39,11 +39,11 @@ public class User_order {
         this.orderTime = orderTime;
     }
 
-    public String getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 }
