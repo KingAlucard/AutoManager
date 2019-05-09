@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface User_orderService {
     //查询所有订单
-    List<User_order> selectOrder();
+    List<User_order> getOrder();
 
     //根据用户Id 查询订单
-    List<User_order> selectOrderById(Integer userId);
+    List<User_order> getOrderById(Integer userId);
 
     //添加订单
-    int findAddOrder(User_order user_order);
+    int addOrder(User_order user_order);
 
     //删除订单
-    int findDeleteOrder(Integer Id);
+    int deleteOrder(Integer Id);
 }

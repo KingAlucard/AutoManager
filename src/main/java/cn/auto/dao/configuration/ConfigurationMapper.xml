@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.auto.dao.configuration.ConfigurationMapper">
+    <!--根据汽车编号查询-->
+    <select id="getCon" resultType="Configuration">
+        select * from configuration where autoId = #{autoId}
+    </select>
+    <!--添加配置-->
+    <insert id="addCon">
+        insert into configuration values(null,#{autoId},#{engine},#{gearbox},#{speed},#{displacement},#{drive})
+    </insert>
+    <!--修改配置-->
+    <update id="updateCon">
+        UPDATE configuration
+        <trim prefix="set" suffix="," suffixOverrides="where">
+            <if test="autoId != null and autoId != ''">
+                autoId = #{autoId}
+            </if>
+            <if test="engine != null and engine != ''">
+                engine = #{engine}
+            </if>
+            <if test="gearbox != null and gearbox != ''">
+                gearbox = #{gearbox}
+            </if>
+            <if test="speed != null and speed != ''">
+                speed = #{speed}
+            </if>
+            <if test="displacement != null and displacement != ''">
+                displacement = #{displacement}
+            </if>
+            <if test="drive != null and drive != ''">
+                drive = #{drive}
+            </if>
+            where Id = #{Id}
+        </trim>
+    </update>
+
+    <!--删除配置-->
+    <delete id="deleteCon">
+        delete from configuration where Id = #{Id}
+    </delete>
+</mapper>
