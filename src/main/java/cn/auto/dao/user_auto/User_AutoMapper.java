@@ -11,7 +11,7 @@ public interface User_AutoMapper {
     List<User_auto> getAuto();
 
     //根据品牌查询所有汽车
-    List<User_auto> getAutoByType(@Param("TypeId") Auto_type TypeId);
+    List<User_auto> getAutoByType(@Param("TypeId") Integer TypeId);
 
     //根据名称模糊查询汽车////////
     List<User_auto> getAutoByName(@Param("autoName") String autoName);
@@ -23,6 +23,6 @@ public interface User_AutoMapper {
     int deleteAuto(@Param("Id") Integer Id);
 
     //修改汽车
-    List<User_auto> updateAuto(@Param("user_auto") User_auto user_auto);
+    int updateAuto(@Param("user_auto") User_auto user_auto);
 
 }

@@ -12,7 +12,7 @@ public interface AdministratorService {
     int addAdmin(Administrator administrator);
 
     //修改管理员信息
-    List<Administrator> updateAdmin(Administrator administrator);
+    int updateAdmin(Administrator administrator);
 
     //删除管理员信息
     int deleteAdmin(Integer Id);

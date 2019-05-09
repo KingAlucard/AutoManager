@@ -13,7 +13,7 @@ public interface AdministratorMapper {
     int addAdmin(@Param("administrator") Administrator administrator);
 
     //修改管理员信息
-    List<Administrator> updateAdmin(@Param("administrator") Administrator administrator);
+    int updateAdmin(@Param("administrator") Administrator administrator);
 
     //删除管理员信息
     int deleteAdmin(@Param("Id") Integer Id);

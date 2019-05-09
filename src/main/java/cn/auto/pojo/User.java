@@ -1,7 +1,7 @@
 package cn.auto.pojo;
 
 public class User {
-    private Integer Id;         //用户编号
+    private Integer id;         //用户编号
     private String userName;    //用户名
     private String passWord;    //用户密码
     private String phone;       //手机号
@@ -13,11 +13,11 @@ public class User {
     private String bankPwd;     //银行卡密码
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getUserName() {

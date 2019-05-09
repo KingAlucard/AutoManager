@@ -5,7 +5,12 @@
 <mapper namespace="cn.auto.dao.configuration.ConfigurationMapper">
     <!--根据汽车编号查询-->
     <select id="getCon" resultType="Configuration">
-        select * from configuration where autoId = #{autoId}
+        select * from configuration
+        <trim prefix="where">
+            <if test="autoId != null and autoId != ''">
+                autoId = #{autoId}
+            </if>
+        </trim>
     </select>
     <!--添加配置-->
     <insert id="addCon">

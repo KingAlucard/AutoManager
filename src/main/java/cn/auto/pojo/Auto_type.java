@@ -1,15 +1,15 @@
 package cn.auto.pojo;
 
 public class Auto_type {
-    private Integer Id;     //品牌编号
+    private Integer id;     //品牌编号
     private String name;    //品牌名称
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getName() {

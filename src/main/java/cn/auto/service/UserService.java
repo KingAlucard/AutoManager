@@ -13,7 +13,7 @@ public interface UserService {
     List<User> userByName(String userName);
 
     //判断用户名不能重复
-    List<User> getuserNoName(String UserName);
+    int getuserNoName(String UserName);
 
     //添加用户
     int addUser(User user);

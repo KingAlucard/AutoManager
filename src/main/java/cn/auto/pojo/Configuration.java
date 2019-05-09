@@ -1,7 +1,7 @@
 package cn.auto.pojo;
 
 public class Configuration {
-    private Integer Id;         //配置编号
+    private Integer id;         //配置编号
     private Integer autoId;     //汽车编号获取信息
     private String engine;      //发动机
     private String gearbox;     //变速箱
@@ -18,11 +18,11 @@ public class Configuration {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getEngine() {

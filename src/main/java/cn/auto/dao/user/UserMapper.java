@@ -20,7 +20,7 @@ public interface UserMapper {
     int addUser(@Param("user") User user);
 
     //修改用户信息
-    List<User> updateUser(@Param("user") User user);
+    int updateUser(@Param("user") User user);
 
     //删除用户信息
     int deleteUser(@Param("Id") Integer Id);

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,7 +22,7 @@
 			汽车编号：<input style="width: 200px;" class="input-text" type="text" name="" placeholder="请输入汽车编号"/>
 			<button type="submit" class="btn btn-success radius" id="" name="">查询</button>
 		</div>
-		<div class="cl pd-5 bg-1 bk-gray mt-20"><a href="javascript:;" onclick="member_add('添加汽车配置','/user/configurationAdd.html','','510')" class="btn btn-primary radius">添加汽车配置</a></span></div>
+		<div class="cl pd-5 bg-1 bk-gray mt-20"><a href="javascript:;" onclick="member_add('添加汽车配置','/user/configurationAdd.html','','510')" class="btn btn-primary radius">添加汽车配置</a></div>
 		<div class="mt-20">
 			<table class="table table-border table-bordered table-hover table-bg table-sort">
 				<thead>
@@ -37,19 +38,22 @@
 				</tr>
 				</thead>
 				<tbody>
-				<tr class="text-c">
-					<td>1</td>
-					<td>1</td>
-					<td>黑霸王发动机</td>
-					<td>5档自动变速箱</td>
-					<td>230</td>
-					<td class="text-l">1.5T</td>
-					<td>四驱</td>
-					<td class="td-manage">
-						<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/configurationUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
-						<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
-					</td>
-				</tr>
+				<c:forEach items="${list}" var="li">
+					<tr class="text-c">
+						<td>${li.id}</td>
+						<td>${li.autoId}</td>
+						<td>${li.engine}</td>
+						<td>${li.gearbox}</td>
+						<td>${li.speed}</td>
+						<td class="text-l">${li.displacement}</td>
+						<td>${li.drive}</td>
+						<td class="td-manage">
+							<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/configurationUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
+							<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
+						</td>
+					</tr>
+				</c:forEach>
+
 				</tbody>
 			</table>
 		</div>

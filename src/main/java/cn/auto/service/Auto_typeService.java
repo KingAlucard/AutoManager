@@ -15,7 +15,7 @@ public interface Auto_typeService {
     int deleteType(Integer Id);
 
     //修改品牌
-    List<Auto_type> updateType(Auto_type auto_type);
+    int updateType(Auto_type auto_type);
 
     //判断品牌名称不能重复
     List<Auto_type> gettypeByName(String name);
