@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface AdministratorService {
     //查询所有管理员信息
-    List<Administrator> selectAdmin();
+    List<Administrator> getAdmin();
 
-    //添加管理员信息
-    int findAddAdmin(Administrator administrator);
+    //添加管理员信息。
+    int addAdmin(Administrator administrator);
 
     //修改管理员信息
-    List<Administrator> findupdateAdmin(Administrator administrator);
+    int updateAdmin(Administrator administrator);
 
     //删除管理员信息
-    int findDseleteAdmin(Integer Id);
+    int deleteAdmin(Integer Id);
 }

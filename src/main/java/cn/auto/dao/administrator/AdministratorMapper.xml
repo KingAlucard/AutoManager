@@ -3,7 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.auto.dao.administrator.AdministratorMapper">
+<<<<<<< HEAD
     <update id="updateAdmin"   >
          update administrator set money=money+#{autoMoney} where Id=#{Id}
     </update>
+=======
+    <!--查询所有管理员信息-->
+    <select id="getAdmin" resultType="Administrator">
+        select * from administrator
+    </select>
+    <!--添加管理员信息。-->
+    <insert id="addAdmin">
+        INSERT INTO administrator VALUES(NULL,#{userName},#{passWord},#{money})
+    </insert>
+    <!--修改管理员信息-->
+    <update id="updateAdmin">
+        update administrator set userName = #{userName},passWord = #{passWord} where Id = #{Id}
+    </update>
+    <!--删除管理员信息-->
+    <delete id="deleteAdmin">
+        delete from administrator where Id = #{Id}
+    </delete>
+>>>>>>> origin/master
 </mapper>

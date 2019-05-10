@@ -7,20 +7,20 @@ import java.util.List;
 
 public interface User_AutoService {
     //查询所有汽车
-    List<User_auto> selectAuto();
+    List<User_auto> getAuto();
 
     //根据品牌查询所有汽车
-    List<User_auto> selectAutoByType(Auto_type TypeId);
+    List<User_auto> getAutoByType(Integer TypeId);
 
-    //根据名称模糊查询汽车
-    List<User_auto> selectAutoByName(String autoName);
+    //根据名称模糊查询汽车////////
+    List<User_auto> getAutoByName(String autoName);
 
     //添加汽车
-    int findAddAuto(User_auto user_auto);
+    int addAuto(User_auto user_auto);
 
     //删除汽车
-    int findDeleteAuto(Integer Id);
+    int deleteAuto(Integer Id);
 
     //修改汽车
-    List<User_auto> findUpdateAuto(User_auto user_auto);
+    int updateAuto(User_auto user_auto);
 }

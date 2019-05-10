@@ -31,17 +31,26 @@
     </bean>
 
 
+<<<<<<< HEAD
     <!--&lt;!&ndash;扫描单个Mapper&ndash;&gt;-->
+=======
+    <!--扫描单个Mapper-->
+>>>>>>> origin/master
     <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
          <!--<property name="mapperInterface" value="cn.auto.dao.configuration.ConfigurationMapper"/>-->
          <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
      <!--</bean>-->
+<<<<<<< HEAD
     <!--<bean id="userMapper1" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
         <!--<property name="mapperInterface" value="cn.auto.dao.user.UserMapper"/>-->
         <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
     <!--</bean>-->
     <!--使用mapper扫描包-->
     <!--扫描mapper映射文件所在地-->
+=======
+
+    <!--使用mapper扫描包-->
+>>>>>>> origin/master
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.auto.dao"/>
     </bean>

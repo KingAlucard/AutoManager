@@ -52,11 +52,7 @@ public class AdminController {
     public String configurationAdd() {
         return "configurationAdd";
     }
-    //车辆配置查询
-    @RequestMapping("/configurationSelete.html")
-    public String configurationSelete() {
-        return "configurationSelete";
-    }
+
     //车辆配置修改
     @RequestMapping("/configurationUpdate.html")
     public String configurationUpdate() {

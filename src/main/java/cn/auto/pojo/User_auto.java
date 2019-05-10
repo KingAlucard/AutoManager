@@ -2,7 +2,7 @@ package cn.auto.pojo;
 
 public class User_auto {
 
-    private Integer Id;         //汽车编号
+    private Integer id;         //汽车编号
     private String autoName;    //汽车名称
     private String production;  //汽车出厂日期
     private Integer autoTypeId; //汽车品牌
@@ -12,8 +12,20 @@ public class User_auto {
     private String autoImg;     //汽车图片路径
     private Integer adminAuto; //商店所有权
     private Integer userAuto;   //用户所有权
+<<<<<<< HEAD
 
 
+=======
+    private Administrator adminId;   //g管理员的Id
+
+    public Administrator getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(Administrator adminId) {
+        this.adminId = adminId;
+    }
+>>>>>>> origin/master
 
     public Integer getAutoTypeId() {
         return autoTypeId;
@@ -56,11 +68,11 @@ public class User_auto {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getAutoName() {

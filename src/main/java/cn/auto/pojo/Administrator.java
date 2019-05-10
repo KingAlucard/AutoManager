@@ -1,7 +1,7 @@
 package cn.auto.pojo;
 
 public class Administrator {
-    private Integer Id;  //编号
+    private Integer id;  //编号
     private String userName;  //管理员账户
     private String passWord;    //管理员密码
     private double money;   //管理员金额
@@ -16,11 +16,11 @@ public class Administrator {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getUserName() {
