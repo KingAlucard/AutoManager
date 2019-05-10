@@ -12,15 +12,8 @@ public class User_auto {
     private String autoImg;     //汽车图片路径
     private Integer adminAuto; //商店所有权
     private Integer userAuto;   //用户所有权
-    private Integer adminId;   //g管理员的Id
 
-    public Integer getAdminId() {
-        return adminId;
-    }
 
-    public void setAdminId(Integer adminId) {
-        this.adminId = adminId;
-    }
 
     public Integer getAutoTypeId() {
         return autoTypeId;
@@ -103,4 +96,5 @@ public class User_auto {
     public void setAutoImg(String autoImg) {
         this.autoImg = autoImg;
     }
+
 }

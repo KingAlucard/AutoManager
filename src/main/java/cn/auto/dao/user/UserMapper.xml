@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.auto.dao.user.UserMapper">
+    <select id="getUser" resultType="user">
+         select * from `user`
+     </select>
+    <select id="getUserById" resultType="user">
+        select * from `user`where Id=#{Id}
+
+    </select>
+    <select id="userByName" resultType="user">
+        select * from `user`
+        <trim prefix="where" prefixOverrides="and |or">
+            <if test="userName!=null and userName!=''">
+                userName like CONCAT ('%',#{userName},'%')
+            </if>
+        </trim>
+    </select>
+    <select id="getuserNoName" resultType="user">
+         select * from `user`where userName =#{UserName}
+     </select>
+    <insert id="addUser">
+     INSERT INTO `user` VALUES(null,#{user.userName},#{user.passWord},#{user.phone},0,#{user.address},#{user.dateTime},#{user.cardId},#{user.bank},#{user.bankPwd}) ;
+    </insert>
+    <update id="updateUser" parameterType="User">
+       UPDATE `auto`.`user`
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userName!=null and userName!=''">
+                `userName` = #{userName},
+            </if>
+            <if test="passWord!=null and passWord!=''">
+                `passWord` = #{passWord},
+            </if>
+            <if test="phone!=null and phone!=''">
+                `phone` = #{phone},
+            </if>
+            <if test="address!=null and address!=''">
+                `address` = #{address},
+            </if>
+            <if test="money!=null and money!=''">
+                `money` = #{money},
+            </if>
+            <if test="dateTime!=null and dateTime!=''">
+                `dateTime` = #{dateTime},
+            </if>
+            <if test="cardId!=null and cardId!=''">
+                `cardId` = #{cardId},
+            </if>
+            <if test="bank!=null and bank!=''">
+                `bank` = #{bank},
+            </if>
+            <if test="cardId!=null and bank!=''">
+                `bankPwd` = #{bankPwd}
+            </if>
+        </trim>
+
+       WHERE `Id` = #{Id}
+    </update>
+    <delete id="deleteUser">
+        delete from `user`
+        <trim prefix="where" prefixOverrides="and |or">
+            <if test="Id!=null and Id!=''">
+                Id=#{Id}
+            </if>
+        </trim>
+    </delete>
+</mapper>

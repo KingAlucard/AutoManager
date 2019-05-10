@@ -5,7 +5,7 @@ public class User {
     private String userName;    //用户名
     private String passWord;    //用户密码
     private String phone;       //手机号
-    private String money;       //余额
+    private double money;       //余额
     private String address;     //地址
     private String dateTime;    //注册日期
     private String cardId;      //身份证号码
@@ -44,11 +44,11 @@ public class User {
         this.phone = phone;
     }
 
-    public String getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -90,5 +90,21 @@ public class User {
 
     public void setBankPwd(String bankPwd) {
         this.bankPwd = bankPwd;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "Id=" + Id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", phone='" + phone + '\'' +
+                ", money='" + money + '\'' +
+                ", address='" + address + '\'' +
+                ", dateTime='" + dateTime + '\'' +
+                ", cardId='" + cardId + '\'' +
+                ", bank='" + bank + '\'' +
+                ", bankPwd='" + bankPwd + '\'' +
+                '}';
     }
 }
