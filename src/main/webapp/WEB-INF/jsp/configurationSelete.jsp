@@ -41,7 +41,7 @@
 				<tbody>
 				<c:forEach items="${list}" var="li">
 					<tr class="text-c" id="selectRow">
-					<td id="id">${li.id}</td>
+					<td>${li.id}</td>
 					<td>${li.autoId}</td>
 					<td>${li.engine}</td>
 					<td>${li.gearbox}</td>
@@ -49,8 +49,8 @@
 					<td class="text-l">${li.displacement}</td>
 					<td>${li.drive}</td>
 					<td class="td-manage">
-						<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/configurationUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
-						<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
+						<a title="编辑" href="javascript:;" class="update" style="text-decoration:none">编辑</a>
+						<a title="删除" href="javascript:;" class="del" style="text-decoration:none" >删除</a>
 					</td>
 				</tr>
 				</c:forEach>
@@ -72,30 +72,40 @@
 	<script src = "../../statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 
+		//加载事件删除
+		$(function () {
+			$(".del").click(function () {
+				var is = confirm("确定删除嘛")
+				var tr = $(this).closest('tr');//找到tr元素
+				var getId = tr.find('td:eq(0)').html();//找到td元素
+				if(is){
+					location.href="/user/configurationDel.html?Id="+getId;
+				}
+
+			})
+
+
+			$(".update").click(function () {
+				var tr = $(this).closest('tr');//找到tr元素
+				var id = tr.find('td:eq(0)').html();//找到td元素
+				var autoId = tr.find('td:eq(1)').html();//找到td元素
+				var engine = tr.find('td:eq(2)').html();//找到td元素
+				var gearbox = tr.find('td:eq(3)').html();//找到td元素
+				var speed = tr.find('td:eq(4)').html();//找到td元素
+				var displacement = tr.find('td:eq(5)').html();//找到td元素
+				var drive = tr.find('td:eq(6)').html();//找到td元素
+
+				layer_show("编辑","/user/configurationUpdate.html?id="+id+"&autoId="+autoId+"&engine="+engine+"&gearbox="+gearbox+"&speed="+speed+"&displacement="+displacement+"&drive="+drive,"","510");
+
+			})
+		})
 
 		/*用户-添加*/
 		function member_add(title, url, w, h) {
 			layer_show(title, url, w, h);
 		}
-		/*用户-编辑*/
-		function member_edit(title, url, id, w, h) {
-			layer_show(title, url, w, h);
-		}
-		/*用户-删除*/
-		function member_del(obj, id) {
-			var is = confirm("确定删除嘛？")
-			if(is){
-				var Id = $(".id").val();
-				alert(Id)
-				location.href="/user/configurationDel.html?Id="+Id;
-			}
 
-		}
-		//chak
-		function member_show(title,url,id,w,h){
-			layer_show(title,url,w,h);
-		}
-		//查询所有配置
+		//查询配置
 		function getCon() {
 			var autoId = $(".input-text").val();
             location.href="/user/configurationSelete.html?autoId="+autoId;

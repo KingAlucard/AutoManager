@@ -18,11 +18,11 @@
 
 	<body>
 	<article class="page-container">
-		<form action="#" method="post" class="form form-horizontal" id="form-member-add">
+		<form action="/user/autoTypeAddType.html" method="post" class="form form-horizontal" id="form-member-add">
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>品牌名称：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="品牌名称">
+					<input type="text" name="name" class="input-text" placeholder="品牌名称">
 				</div>
 			</div>
 			<div class="row cl">
@@ -45,7 +45,16 @@
 	<script type="text/javascript" src="../statics/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="../statics/js/validate-methods.js"></script>
 	<script type="text/javascript" src="../statics/js/messages_zh.js"></script>
+	<script src = "../../statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//加载事件
+		$(function () {
+			$("#form-member-add").submit(function () {
 
+				parent.location.href="/user/autoTypeSelete.html";
+			})
+		})
+	</script>
 	<!--/请在上方写此页面业务相关的脚本-->
 	</body>
 

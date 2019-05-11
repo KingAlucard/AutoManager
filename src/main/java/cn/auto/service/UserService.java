@@ -7,7 +7,10 @@ import java.util.List;
 public interface UserService {
     //查询所有用户
     List<User> getUser();
-    
+
+    //根据手机号查询用户
+    List<User> getUserByPhone(String phone);
+
     //根据Id查询用户信息
     List<User> getUserById(Integer Id);
 

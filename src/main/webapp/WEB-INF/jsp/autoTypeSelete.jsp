@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,14 +31,18 @@
 				</tr>
 				</thead>
 				<tbody>
-				<tr class="text-c">
-					<td>1</td>
-					<td>兰博基尼</td>
-					<td class="td-manage">
-						<a title="编辑" href="javascript:;" onclick="member_edit('编辑','/user/autoTypeUpdate.html','4','','510')" class="ml-5" style="text-decoration:none">编辑</a>
-						<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
-					</td>
-				</tr>
+				<c:forEach items="${list}" var="li">
+					<tr class="text-c">
+						<td>${li.id}</td>
+						<td>${li.name}</td>
+						<td class="td-manage">
+							<a title="编辑" href="javascript:;" class="update" style="text-decoration:none">编辑</a>
+							<a title="删除" href="javascript:;" class="del" id="delType" style="text-decoration:none">删除</a>
+						</td>
+
+					</tr>
+				</c:forEach>
+
 				</tbody>
 			</table>
 		</div>
@@ -52,19 +57,36 @@
 	<!--请在下方写此页面业务相关的脚本-->
 	<script type="text/javascript" src="../statics/js/WdatePicker.js"></script>
 	<script type="text/javascript" src="../statics/js/laypage.js"></script>
+	<script src = "../../statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		//加载事件删除
+		$(function () {
+			$(".del").click(function () {
+				var is = confirm("确定删除嘛？");
+				var tr = $(this).closest('tr');//找到tr元素
+				var getId = tr.find('td:eq(0)').html();//找到td元素
+				if(is){
+					location.href="/user/autoTypeDel.html?Id="+getId;
+				}
+			})
+			$(".update").click(function () {
 
+				var tr = $(this).closest('tr');//找到tr元素
+				var id = tr.find('td:eq(0)').html();//找到td元素
+				var name = tr.find('td:eq(1)').html();//找到td元素
+				alert(id)
+				alert(name)
+				layer_show("编辑", "/user/autoTypeUpdate.html?name="+name+"&Id="+id, "", "510");
+			})
+
+		})
 		/*用户-添加*/
 		function member_add(title, url, w, h) {
 			layer_show(title, url, w, h);
 		}
 		/*用户-编辑*/
 		function member_edit(title, url, id, w, h) {
-			layer_show(title, url, w, h);
-		}
-		/*用户-删除*/
-		function member_del(obj, id) {
-			confirm("确定删除嘛？");
+
 		}
 	</script>
 	</body>

@@ -18,6 +18,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getUserByPhone(String phone) {
+        return userMapper.getUserByPhone(phone);
+    }
+
+    @Override
     public List<User> getUserById(Integer Id) {
         return userMapper.getUserById(Id);
     }

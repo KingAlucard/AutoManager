@@ -16,8 +16,8 @@
         DELETE	FROM auto_type WHERE Id = #{Id}
     </delete>
     <!--修改品牌-->
-    <update id="updateType">
-        UPDATE auto_type SET name = #{name} where Id = #{Id}
+    <update id="updateType" parameterType="Auto_type">
+        UPDATE auto_type SET name = #{name} where Id = #{id}
     </update>
     <!--判断品牌名称不能重复-->
     <select id="gettypeByName" resultType="Auto_type">

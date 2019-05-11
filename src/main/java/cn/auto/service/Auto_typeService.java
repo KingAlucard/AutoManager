@@ -9,7 +9,7 @@ public interface Auto_typeService {
     List<Auto_type> getType();
 
     //新增品牌
-    int addType(Auto_type auto_type);
+    int addType(String name);
 
     //删除品牌
     int deleteType(Integer Id);

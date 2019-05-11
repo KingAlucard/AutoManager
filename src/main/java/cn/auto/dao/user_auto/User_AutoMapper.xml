@@ -3,6 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.auto.dao.user_auto.User_AutoMapper">
+    <select id="getAutoByType" resultType="User_auto">
+        select * from user_auto
+        <trim prefix="where">
+            <if test="autoTypeId != null and autoTypeId != ''">
+                autoTypeId = #{autoTypeId}
+            </if>
+        </trim>
+    </select>
+
     <update id="updateAuto">
         UPDATE user_auto
         <trim prefix="set" suffix="," suffixOverrides="where">

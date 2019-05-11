@@ -10,13 +10,13 @@ public interface Auto_typeMapper {
     List<Auto_type> getType();
 
     //新增品牌
-    int addType(@Param("auto_type") Auto_type auto_type);
+    int addType(@Param("name") String name);
 
     //删除品牌
     int deleteType(@Param("Id") Integer Id);
 
     //修改品牌
-    int updateType(@Param("auto_type") Auto_type auto_type);
+    int updateType(Auto_type auto_type);
 
     //判断品牌名称不能重复
     List<Auto_type> gettypeByName(@Param("name") String name);

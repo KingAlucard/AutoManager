@@ -18,28 +18,7 @@
     </insert>
     <!--修改配置-->
     <update id="updateCon" parameterType="Configuration">
-        UPDATE configuration
-        <trim prefix="set" suffix="," suffixOverrides="where">
-            <if test="autoId != null and autoId != ''">
-                autoId = #{autoId}
-            </if>
-            <if test="engine != null and engine != ''">
-                engine = #{engine}
-            </if>
-            <if test="gearbox != null and gearbox != ''">
-                gearbox = #{gearbox}
-            </if>
-            <if test="speed != null and speed != ''">
-                speed = #{speed}
-            </if>
-            <if test="displacement != null and displacement != ''">
-                displacement = #{displacement}
-            </if>
-            <if test="drive != null and drive != ''">
-                drive = #{drive}
-            </if>
-            where Id = #{id}
-        </trim>
+        UPDATE configuration set autoId = #{autoId},engine = #{engine},gearbox = #{gearbox},speed = #{speed},displacement = #{displacement},drive = #{drive} where Id = #{id}
     </update>
 
     <!--删除配置-->

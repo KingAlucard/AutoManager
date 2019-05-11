@@ -19,41 +19,42 @@
 
 	<body>
 	<article class="page-container">
-		<form action="#" method="post" class="form form-horizontal" id="form-member-add">
+		<form action="/user/configurationUpdateCon.html" method="post" class="form form-horizontal" id="form-member-add">
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>汽车编号：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="汽车编号">
+					<input style="display: none" type="text" name="id" class="input-text" value="${configuration.id}" placeholder="汽车编号">
+					<input type="text" class="input-text" name="autoId" value="${configuration.autoId}" placeholder="汽车编号">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>发动机：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="发动机">
+					<input type="text" class="input-text" name="engine" value="${configuration.engine}" placeholder="发动机">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>变速箱：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="变速箱">
+					<input type="text" class="input-text" name="gearbox" value="${configuration.gearbox}" placeholder="变速箱">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>最高时速：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="最高时速">
+					<input type="text" class="input-text" name="speed" value="${configuration.speed}" placeholder="最高时速">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>排量：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="排量">
+					<input type="text" class="input-text" name="displacement" value="${configuration.displacement}" placeholder="排量">
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>驱动方式：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="驱动方式">
+					<input type="text" class="input-text" name="drive" value="${configuration.drive}" placeholder="驱动方式">
 				</div>
 			</div>
 			<div class="row cl">
@@ -76,7 +77,16 @@
 	<script type="text/javascript" src="../statics/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="../statics/js/validate-methods.js"></script>
 	<script type="text/javascript" src="../statics/js/messages_zh.js"></script>
+	<script src = "../../statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//加载事件
+		$(function () {
+			$("#form-member-add").submit(function () {
 
+				parent.location.href="/user/configurationSelete.html";
+			})
+		})
+	</script>
 	<!--/请在上方写此页面业务相关的脚本-->
 	</body>
 

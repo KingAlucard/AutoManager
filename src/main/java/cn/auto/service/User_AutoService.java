@@ -10,7 +10,7 @@ public interface User_AutoService {
     List<User_auto> getAuto();
 
     //根据品牌查询所有汽车
-    List<User_auto> getAutoByType(Integer TypeId);
+    List<User_auto> getAutoByType(Integer autoTypeId);
 
     //根据名称模糊查询汽车////////
     List<User_auto> getAutoByName(String autoName);

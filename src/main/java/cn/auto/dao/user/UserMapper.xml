@@ -8,8 +8,18 @@
      </select>
     <select id="getUserById" resultType="user">
         select * from `user`where Id=#{Id}
-
     </select>
+
+    <!--根据手机号查询用户-->
+    <select id="getUserByPhone" resultType="user">
+        SELECT * FROM user
+         <trim prefix="where">
+             <if test="phone != null and phone!=''">
+                 phone=#{phone}
+             </if>
+         </trim>
+    </select>
+
     <select id="userByName" resultType="user">
         select * from `user`
         <trim prefix="where" prefixOverrides="and |or">

@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface UserMapper {
+    //根据手机号查询用户
+    List<User> getUserByPhone(@Param("phone") String phone);
     //查询所有用户
     List<User> getUser();
     //根据Id查询用户信息
